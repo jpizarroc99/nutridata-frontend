@@ -1,47 +1,21 @@
-import "./App.css";
+import CssBaseline from "@mui/material/CssBaseline";
+import { BrowserRouter, Routes, Route } from "react-router";
 
-import { useState } from "react";
+import { Layout } from "./modules/layouts/Layout";
 
-import reactLogo from "./assets/react.svg";
+import { HomePage } from "./modules/home/pages/HomePage";
 
-import { Header } from "./modules/layouts/Header";
-import { SectionContainer } from "./modules/layouts/SectionContainer";
-
-import viteLogo from "/vite.svg";
-
-function App() {
-  const [count, setCount] = useState(0);
-  console.log("String");
-
-  function aumentarContador() {
-    setCount((count) => count + 1);
-  }
-
+export default function App() {
   return (
     <>
-      <Header />
-
-      <SectionContainer>
-        <div>
-          <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
-        </div>
-        <h1>NutriData</h1>
-        <div className="card">
-          <button onClick={aumentarContador}>count is {count}</button>
-          <button on></button>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-      </SectionContainer>
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index path="/" element={<HomePage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
-
-export default App;
