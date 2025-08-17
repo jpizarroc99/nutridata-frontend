@@ -1,9 +1,11 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Routes, Route } from "react-router";
 
-import { Layout } from "./modules/layouts/Layout";
-
+import { CartPage } from "./modules/cart/pages/CartPage";
+import { Layout } from "./modules/core/components/Layout";
+import { AppRoutes } from "./modules/core/lib/AppRoutes";
 import { HomePage } from "./modules/home/pages/HomePage";
+import { SearchPage } from "./modules/search/pages/SearchPage";
 
 export default function App() {
   return (
@@ -12,7 +14,9 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route index path="/" element={<HomePage />} />
+            <Route index path={AppRoutes.homePage} element={<HomePage />} />
+            <Route path={AppRoutes.searchPage} element={<SearchPage />} />
+            <Route path={AppRoutes.cartPage} element={<CartPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
