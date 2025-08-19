@@ -1,6 +1,7 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Routes, Route } from "react-router";
 
+import { LoginPage } from "./modules/auth/pages/LoginPage";
 import { CartPage } from "./modules/cart/pages/CartPage";
 import { CategoryPage } from "./modules/category/pages/CategoryPage";
 import { Layout } from "./modules/core/layouts/Layout";
@@ -17,6 +18,7 @@ export default function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index path={AppRoutes.homePage} element={<HomePage />} />
+            <Route path={AppRoutes.loginPage} element={<LoginPage />} />
             <Route path={AppRoutes.searchPage} element={<SearchPage />} />
             <Route path={AppRoutes.cartPage} element={<CartPage />} />
             <Route path={AppRoutes.favoritesPage} element={<FavoritesPage />} />
