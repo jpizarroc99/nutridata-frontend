@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
+import { LoginButton } from "../../auth/components/LoginButton";
+import { RegisterButton } from "../../auth/components/RegisterButton";
 import { CartButton } from "../../cart/components/CartButton";
 import { SearchForm } from "../components/SearchForm";
 import { Logo } from "./Logo";
@@ -40,7 +42,7 @@ function MobileDrawer() {
       </IconButton>
       <Drawer open={isOpen} anchor="right" onClose={() => setIsOpen(false)}>
         <Box sx={{ width: 250 }} role="presentation" onClick={() => setIsOpen(false)}>
-          <List>
+          <List sx={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
             {["Equipos medicos", "Box de atención", "Productos", "Favoritos"].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
@@ -49,6 +51,18 @@ function MobileDrawer() {
                 </ListItemButton>
               </ListItem>
             ))}
+            <div style={{ display: "grid", marginTop: "auto" }}>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <LoginButton />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <RegisterButton />
+                </ListItemButton>
+              </ListItem>
+            </div>
           </List>
         </Box>
       </Drawer>

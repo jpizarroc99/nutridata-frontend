@@ -1,13 +1,31 @@
-import { useNavigate } from "react-router-dom";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import { Button, IconButton } from "@mui/material";
+import { useNavigate } from "react-router";
 
 import { AppRoutes } from "../../core/lib/AppRoutes";
 
-export function RegisterButton() {
+export function RegisterButton({ iconButton = false }) {
   const navigate = useNavigate();
+  const goToPage = () => {
+    navigate(AppRoutes.registerPage);
+  };
 
+  if (iconButton) {
+    return (
+      <IconButton color="primary" aria-label="Iniciar sesión" onClick={goToPage}>
+        <PersonAddIcon />
+      </IconButton>
+    );
+  }
   return (
-    <IconButton color="primary" onClick={() => navigate(AppRoutes.registerpage)}>
-      <span>Registrarse</span>
-    </IconButton>
+    <Button
+      fullWidth
+      variant="contained"
+      color="primary"
+      onClick={goToPage}
+      startIcon={<PersonAddIcon />}
+    >
+      Regístrate
+    </Button>
   );
 }
