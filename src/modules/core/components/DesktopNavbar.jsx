@@ -1,3 +1,4 @@
+import { RegisterButton } from "../../auth/components/RegisterButton";
 import { CartButton } from "../../cart/components/CartButton";
 import { FavoritesButton } from "./FavoritesButton";
 import { Logo } from "./Logo";
@@ -17,7 +18,8 @@ export function DesktopNav() {
       <div style={{ flex: 1, maxWidth: "35rem" }}>
         <SearchForm />
       </div>
-      <div>
+      <div style={{ display: "flex", gap: "1rem" }}>
+        <RegisterButton iconButton />
         <CartButton />
         <FavoritesButton />
       </div>
