@@ -5,6 +5,7 @@ import StraightenIcon from "@mui/icons-material/Straighten";
 import { Container, Grid } from "@mui/material";
 
 import { CategoryCard } from "../../category/components/CategoryCard";
+import { FeaturedProducts } from "../components/FeaturedProducts";
 
 // const featuredProducts = [
 //   {
@@ -92,7 +93,7 @@ const categories = [
 
 export function HomePage() {
   return (
-    <>
+    <div style={{display: "grid","gap":"3rem"}}>
       <Container>
         <h1>Home Page</h1>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 8, md: 16 }}>
@@ -116,6 +117,10 @@ export function HomePage() {
           ))}
         </Grid>
       </Container>
-    </>
+      <div style={{backgroundColor: "#F9FAFB"}}>
+        <FeaturedProducts />
+      </div>
+      
+    </div>
   );
 }
