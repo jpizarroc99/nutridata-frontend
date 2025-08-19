@@ -11,9 +11,11 @@ import { ThemeProvider } from "./modules/core/lib/AppTheme";
 import { FavoritesPage } from "./modules/favorites/pages/FavoritesPage";
 import { HomePage } from "./modules/home/pages/HomePage";
 import { SearchPage } from "./modules/search/pages/SearchPage";
+import { CartProvider } from "./modules/cart/Context/CartContext";
 
 export default function App() {
   return (
+    <CartProvider>
     <ThemeProvider>
       <CssBaseline />
       <BrowserRouter>
@@ -28,7 +30,8 @@ export default function App() {
             <Route path={AppRoutes.registerPage} element={<RegisterPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter>      
     </ThemeProvider>
+    </CartProvider>
   );
 }
