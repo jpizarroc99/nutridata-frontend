@@ -16,10 +16,10 @@ import {
   IconButton,
   MenuItem,
   Checkbox,
-  FormControlLabel,
-  Link
+  FormControlLabel
 } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router";
 
 import { AppRoutes } from "../../core/lib/AppRoutes";
 
@@ -261,8 +261,9 @@ export function RegisterForm({ onSubmit }) {
                 }
                 label={
                   <Typography variant="body2">
-                    Acepto los <Link href={AppRoutes.termsAndConditionsPage}>términos y condiciones</Link> y la{" "}
-                    <Link href={AppRoutes.privacyPolicyPage}>política de privacidad</Link>. *
+                    Acepto los{" "}
+                    <Link to={AppRoutes.termsAndConditionsPage}>términos y condiciones</Link> y la{" "}
+                    <Link to={AppRoutes.privacyPolicyPage}>política de privacidad</Link>. *
                   </Typography>
                 }
               />
@@ -285,10 +286,7 @@ export function RegisterForm({ onSubmit }) {
           </form>
           {/* Link a la página de inicio de sesión */}
           <Typography variant="body2" align="center">
-            ¿Ya tienes una cuenta?{" "}
-            <Link href={AppRoutes.loginPage} underline="hover">
-              Iniciar sesión aquí
-            </Link>
+            ¿Ya tienes una cuenta? <Link to={AppRoutes.loginPage}>Iniciar sesión aquí</Link>
           </Typography>
         </CardContent>
       </Card>

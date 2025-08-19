@@ -123,10 +123,7 @@ function LoginForm() {
               {loading ? <CircularProgress size={20} /> : "Iniciar Sesión"}
             </Button>
             <Typography variant="body2" align="center">
-              ¿No tienes una cuenta?{" "}
-              <Link href={AppRoutes.registerPage} underline="hover">
-                Registrate aquí
-              </Link>
+              ¿No tienes una cuenta? <Link to={AppRoutes.registerPage}>Registrate aquí</Link>
             </Typography>
           </form>
         </CardContent>
