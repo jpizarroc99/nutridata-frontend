@@ -9,4 +9,5 @@ export class AppRoutes {
   static categoryDetailPage = ({ slug }) => `${this.categoryPage}/${slug}`;
   static termsAndConditionsPage = "/terminos";
   static privacyPolicyPage = "/politica-privacidad";
+  static catalogPage = "/catalog";
 }

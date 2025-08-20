@@ -1,5 +1,6 @@
 import { Container, Typography } from "@mui/material";
 import React from "react";
+
 import { CartSummary } from "../components/CartSummary";
 
 export const CartPage = () => {
