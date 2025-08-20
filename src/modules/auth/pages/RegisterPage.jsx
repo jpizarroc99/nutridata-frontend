@@ -4,7 +4,7 @@ import { RegisterForm } from "../components/RegisterForm.jsx";
 
 export function RegisterPage() {
   return (
-    <Container sx={{ mt: 6 }}>
+    <Container sx={{ my: 6 }}>
       <RegisterForm />
     </Container>
   );

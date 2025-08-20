@@ -22,6 +22,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 
 import { AppRoutes } from "../../core/lib/AppRoutes";
+import { useAuth } from "../hook/useAuth";
 
 const initialState = {
   name: "",
@@ -32,7 +33,9 @@ const initialState = {
   occupation: ""
 };
 
-export function RegisterForm({ onSubmit }) {
+export function RegisterForm() {
+  const { register } = useAuth();
+
   const [form, setForm] = useState(initialState);
   const [_errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
@@ -52,13 +55,20 @@ export function RegisterForm({ onSubmit }) {
     return Object.values(temp).every((x) => x === "");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
+
     if (validate()) {
-      if (onSubmit) onSubmit(form);
+      console.log("Form submitted:", form);
+
+      const registerResult = await register(form);
+
+      console.log(registerResult);
+    } else {
+      console.error("Form invalid");
     }
   };
+
   const handleChange = (e) => {
     setForm({
       ...form,
