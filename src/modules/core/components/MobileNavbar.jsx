@@ -12,7 +12,9 @@ import {
 import { useState } from "react";
 
 import { LoginButton } from "../../auth/components/LoginButton";
+import { LogoutButton } from "../../auth/components/LogoutButton";
 import { RegisterButton } from "../../auth/components/RegisterButton";
+import { useAuth } from "../../auth/hook/useAuth";
 import { CartButton } from "../../cart/components/CartButton";
 import { SearchForm } from "../components/SearchForm";
 import { Logo } from "./Logo";
@@ -35,6 +37,8 @@ export function MobileNav() {
 function MobileDrawer() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const { isAuthenticated } = useAuth();
+
   return (
     <>
       <IconButton color="primary" onClick={() => setIsOpen(true)}>
@@ -52,16 +56,26 @@ function MobileDrawer() {
               </ListItem>
             ))}
             <div style={{ display: "grid", marginTop: "auto" }}>
-              <ListItem disablePadding>
-                <ListItemButton>
-                  <LoginButton />
-                </ListItemButton>
-              </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton>
-                  <RegisterButton />
-                </ListItemButton>
-              </ListItem>
+              {isAuthenticated ? (
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <LogoutButton />
+                  </ListItemButton>
+                </ListItem>
+              ) : (
+                <>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <LoginButton />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <RegisterButton />
+                    </ListItemButton>
+                  </ListItem>
+                </>
+              )}
             </div>
           </List>
         </Box>

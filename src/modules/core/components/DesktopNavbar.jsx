@@ -1,10 +1,14 @@
+import { LogoutButton } from "../../auth/components/LogoutButton";
 import { RegisterButton } from "../../auth/components/RegisterButton";
+import { useAuth } from "../../auth/hook/useAuth";
 import { CartButton } from "../../cart/components/CartButton";
 import { FavoritesButton } from "./FavoritesButton";
 import { Logo } from "./Logo";
 import { SearchForm } from "./SearchForm";
 
 export function DesktopNav() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <nav
       style={{
@@ -19,7 +23,7 @@ export function DesktopNav() {
         <SearchForm />
       </div>
       <div style={{ display: "flex", gap: "1rem" }}>
-        <RegisterButton iconButton />
+        {isAuthenticated ? <LogoutButton iconButton /> : <RegisterButton iconButton />}
         <CartButton />
         <FavoritesButton />
       </div>

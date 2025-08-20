@@ -1,17 +1,10 @@
-import { Container, Box } from "@mui/material";
+import { Container } from "@mui/material";
 
-import LoginForm from "../components/LoginForm"; // Asegúrate de que la ruta sea correcta
+import { LoginForm } from "../components/LoginForm";
 
 export function LoginPage() {
   return (
-    <Container
-      sx={{
-        mt: 8,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center"
-      }}
-    >
+    <Container sx={{ my: 6 }}>
       <LoginForm />
     </Container>
   );
