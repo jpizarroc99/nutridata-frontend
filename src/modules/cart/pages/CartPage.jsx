@@ -1,10 +1,15 @@
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
+import React from "react";
+import { CartSummary } from "../components/CartSummary";
 
-export function CartPage() {
+export const CartPage = () => {
   return (
     <>
-      <Container>
-        <h1>Cart Page</h1>
+      <Container sx={{ mt: 4 }}>
+        <Typography variant="h4" gutterBottom>
+          Mi Carrito
+        </Typography>
+        <CartSummary />
       </Container>
     </>
   );
