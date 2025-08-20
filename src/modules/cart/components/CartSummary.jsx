@@ -1,6 +1,7 @@
-import React from "react";
-import { useCart } from "../hooks/useCart";
 import { Button, List, ListItem, ListItemText, Divider, Typography } from "@mui/material";
+import React from "react";
+
+import { useCart } from "../hooks/useCart";
 
 export const CartSummary = () => {
   const { cart, getTotal, removeFromCart } = useCart();

@@ -1,4 +1,15 @@
-import React from 'react';
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  LinkedIn,
+  Email,
+  Phone,
+  LocationOn,
+  Security,
+  Analytics,
+  Favorite
+} from '@mui/icons-material';
 import {
   Box,
   Container,
@@ -12,18 +23,7 @@ import {
   useTheme,
   Avatar
 } from '@mui/material';
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  LinkedIn,
-  Email,
-  Phone,
-  LocationOn,
-  Security,
-  Analytics,
-  Favorite
-} from '@mui/icons-material';
+import React from 'react';
 
 export function Footer() {
   const theme = useTheme();
