@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import { Outlet } from "react-router";
 
 import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 export function Layout() {
   return (
@@ -10,11 +11,7 @@ export function Layout() {
       <main style={{ flex: 1 }}>
         <Outlet />
       </main>
-      <footer>
-        <Container>
-          <p>&copy; Nutridata 2025</p>
-        </Container>
-      </footer>
+      <Footer />
     </div>
   );
 }
