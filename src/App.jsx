@@ -1,23 +1,25 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Routes, Route } from "react-router";
 
+import { Layout } from "./modules/core/layouts/Layout";
+import { AppRoutes } from "./modules/core/lib/AppRoutes";
+
 import { LoginPage } from "./modules/auth/pages/LoginPage";
 import { RegisterPage } from "./modules/auth/pages/RegisterPage";
 import { CartPage } from "./modules/cart/pages/CartPage";
 import { CategoryPage } from "./modules/category/pages/CategoryPage";
-import { Layout } from "./modules/core/layouts/Layout";
-import { AppRoutes } from "./modules/core/lib/AppRoutes";
-import { ThemeProvider } from "./modules/core/lib/AppTheme";
 import { FavoritesPage } from "./modules/favorites/pages/FavoritesPage";
 import { HomePage } from "./modules/home/pages/HomePage";
 import { SearchPage } from "./modules/search/pages/SearchPage";
-import { CartProvider } from "./modules/cart/Context/CartContext";
+
+import { ThemeProvider } from "./modules/core/lib/AppTheme";
+import { CartProvider } from "./modules/cart/components/CartProvider";
 
 export default function App() {
   return (
-    <CartProvider>
     <ThemeProvider>
       <CssBaseline />
+      <CartProvider>
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
@@ -30,8 +32,8 @@ export default function App() {
             <Route path={AppRoutes.registerPage} element={<RegisterPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>      
+      </BrowserRouter> 
+    </CartProvider>     
     </ThemeProvider>
-    </CartProvider>
   );
 }

@@ -4,6 +4,7 @@ import { Button, List, ListItem, ListItemText, Divider, Typography } from "@mui/
 
 export const CartSummary = () => {
   const { cart, getTotal, removeFromCart } = useCart();
+ console.log(cart); 
 
   if (cart.length === 0) {
     return <Typography variant="h6">El carrito está vacío</Typography>;
@@ -25,15 +26,15 @@ export const CartSummary = () => {
             }
           >
             <ListItemText
-              primary={item.name}
-              secondary={`Cantidad: ${item.quantity} x $${item.price}`}
+              primary={item.title}
+              secondary={`Cantidad: ${item.quantity} x $${item.price.toLocaleString('es-CL')}`}
             />
           </ListItem>
           <Divider />
         </div>
       ))}
       <Typography variant="h6" sx={{ mt: 2 }}>
-        Total: ${getTotal()}
+        Total: ${getTotal().toLocaleString('es-CL')}
       </Typography>
     </List>
   );
