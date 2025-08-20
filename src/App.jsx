@@ -14,9 +14,11 @@ import { SearchPage } from "./modules/search/pages/SearchPage";
 
 import { ThemeProvider } from "./modules/core/lib/AppTheme";
 import { CartProvider } from "./modules/cart/components/CartProvider";
+import { FavoriteProvider } from "./modules/favorites/contexts/FavoriteContext";
 
 export default function App() {
   return (
+    <FavoriteProvider>
     <ThemeProvider>
       <CssBaseline />
       <CartProvider>
@@ -35,5 +37,6 @@ export default function App() {
       </BrowserRouter> 
     </CartProvider>     
     </ThemeProvider>
+    </FavoriteProvider>
   );
 }
