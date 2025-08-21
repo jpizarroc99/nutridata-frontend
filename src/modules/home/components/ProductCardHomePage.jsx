@@ -6,7 +6,6 @@ import { useCart } from "../../cart/hooks/useCart";
 
 export function ProductCard({ id, title, category, price, image, tag }) {
   const { addToCart } = useCart();
-  console.log(Number(price));
   const getChipColor = () => {
     switch (tag) {
       case "Nuevo":
