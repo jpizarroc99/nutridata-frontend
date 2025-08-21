@@ -8,7 +8,7 @@ export const CartPage = () => {
     <>
       <Container sx={{ mt: 4 }}>
         <Typography variant="h4" gutterBottom>
-          Mi Carrito
+          <strong>Mi Carrito</strong>
         </Typography>
         <CartSummary />
       </Container>
