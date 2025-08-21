@@ -5,7 +5,7 @@ import { useCart } from "../hooks/useCart";
 
 export const CartSummary = () => {
   const { cart, getTotal, removeFromCart } = useCart();
- console.log(cart); 
+  console.log(cart);
 
   if (cart.length === 0) {
     return <Typography variant="h6">El carrito está vacío</Typography>;
@@ -17,25 +17,21 @@ export const CartSummary = () => {
         <div key={item.id}>
           <ListItem
             secondaryAction={
-              <Button
-                variant="outlined"
-                color="error"
-                onClick={() => removeFromCart(item.id)}
-              >
+              <Button variant="outlined" color="error" onClick={() => removeFromCart(item.id)}>
                 Eliminar
               </Button>
             }
           >
             <ListItemText
               primary={item.title}
-              secondary={`Cantidad: ${item.quantity} x $${item.price.toLocaleString('es-CL')}`}
+              secondary={`Cantidad: ${item.quantity} x $${item.price.toLocaleString("es-CL")}`}
             />
           </ListItem>
           <Divider />
         </div>
       ))}
       <Typography variant="h6" sx={{ mt: 2 }}>
-        Total: ${getTotal().toLocaleString('es-CL')}
+        Total: ${getTotal().toLocaleString("es-CL")}
       </Typography>
     </List>
   );

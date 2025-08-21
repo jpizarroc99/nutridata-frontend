@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { ProductCard } from "../../home/components/ProductCardHomePage";
-import { useFavorite } from "../contexts/FavoriteContext";
+import { useFavorite } from "../hook/useFavorite";
 
 export const FavoritesPage = () => {
   const { favorites } = useFavorite();

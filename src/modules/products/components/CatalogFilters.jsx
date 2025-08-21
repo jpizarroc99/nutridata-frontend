@@ -8,11 +8,10 @@ import {
   MenuItem,
   TextField,
   Stack
-} from '@mui/material';
-import React from 'react';
+} from "@mui/material";
 
-import { useProductContext } from '../context/ProductContext';
-import { categories } from '../utils/dummyData';
+import { useProductContext } from "../hook/useProducts";
+import { categories } from "../utils/dummyData";
 
 const CatalogFilters = () => {
   const { filters, setFilter } = useProductContext();
@@ -34,7 +33,7 @@ const CatalogFilters = () => {
       <Typography variant="h6" gutterBottom>
         Filtros
       </Typography>
-      
+
       <TextField
         fullWidth
         label="Buscar productos"
@@ -43,13 +42,13 @@ const CatalogFilters = () => {
         onChange={handleSearchChange}
         sx={{ mb: 3 }}
       />
-      
+
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" gutterBottom>
           Categorías
         </Typography>
         <Stack direction="row" flexWrap="wrap" gap={1}>
-          {categories.map(category => (
+          {categories.map((category) => (
             <Chip
               key={category}
               label={category}
@@ -60,14 +59,10 @@ const CatalogFilters = () => {
           ))}
         </Stack>
       </Box>
-      
+
       <FormControl fullWidth sx={{ mt: 2 }}>
         <InputLabel>Ordenar por</InputLabel>
-        <Select
-          value={filters.sortBy}
-          label="Ordenar por"
-          onChange={handleSortChange}
-        >
+        <Select value={filters.sortBy} label="Ordenar por" onChange={handleSortChange}>
           <MenuItem value="name">Nombre</MenuItem>
           <MenuItem value="price">Precio: Menor a Mayor</MenuItem>
           <MenuItem value="stock">Disponibilidad</MenuItem>
