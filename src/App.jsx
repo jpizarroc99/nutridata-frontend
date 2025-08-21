@@ -1,6 +1,7 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Routes, Route } from "react-router";
 
+import AboutUsPage from "./modules/about-us/pages/AboutUsPage";
 import { AlreadyLoggedRoute } from "./modules/auth/components/AlreadyLoggedRoute";
 import { AuthProvider } from "./modules/auth/components/AuthProvider";
 import { LoginPage } from "./modules/auth/pages/LoginPage";
@@ -41,6 +42,7 @@ export default function App() {
                     <Route path={AppRoutes.favoritesPage} element={<FavoritesPage />} />
                     <Route path={AppRoutes.categoryPage} element={<CategoryPage />} />
                     <Route path={AppRoutes.catalogPage} element={<CatalogPage />} />
+                    <Route path={AppRoutes.aboutUsPage} element={<AboutUsPage />} />
                   </Route>
                 </Routes>
               </ProductProvider>
