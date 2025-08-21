@@ -11,9 +11,7 @@ export const CartProvider = ({ children }) => {
     if (existing) {
       setCart(
         cart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         )
       );
     } else {
@@ -27,12 +25,7 @@ export const CartProvider = ({ children }) => {
 
   const updateQuantity = (productId, quantity) => {
     if (quantity <= 0) removeFromCart(productId);
-    else
-      setCart(
-        cart.map((item) =>
-          item.id === productId ? { ...item, quantity } : item
-        )
-      );
+    else setCart(cart.map((item) => (item.id === productId ? { ...item, quantity } : item)));
   };
 
   const clearCart = () => setCart([]);

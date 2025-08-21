@@ -11,10 +11,10 @@ import { CategoryPage } from "./modules/category/pages/CategoryPage";
 import { Layout } from "./modules/core/layouts/Layout";
 import { AppRoutes } from "./modules/core/lib/AppRoutes";
 import { ThemeProvider } from "./modules/core/lib/AppTheme";
-import { FavoriteProvider } from "./modules/favorites/contexts/FavoriteContext";
+import { FavoriteProvider } from "./modules/favorites/components/FavoriteProvider";
 import { FavoritesPage } from "./modules/favorites/pages/FavoritesPage";
 import { HomePage } from "./modules/home/pages/HomePage";
-import { ProductProvider } from "./modules/products/context/ProductContext";
+import { ProductProvider } from "./modules/products/components/ProductProvider";
 import CatalogPage from "./modules/products/pages/CatalogPage";
 import { SearchPage } from "./modules/search/pages/SearchPage";
 

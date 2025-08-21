@@ -1,8 +1,8 @@
-// La ruta de importación del contexto es ahora relativa a su nueva ubicación.
-import { useFavorite } from "../../contexts/FavoriteContext";
+import { useFavorite } from "./useFavorite";
 
 const useFavoriteLogic = (product) => {
   const { isFavorite, addFavorite, removeFavorite } = useFavorite();
+
   const isCurrentlyFavorite = isFavorite(product.id);
 
   const toggleFavorite = () => {

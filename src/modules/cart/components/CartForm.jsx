@@ -1,62 +1,59 @@
-import {
-  TextField,
-  Button,
-  Box
-} from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 import { useState } from "react";
 
 export function CartForm() {
-const [form, setForm] = useState({
+  const [form, setForm] = useState({
     name: "",
     address: "",
-    paymentMethod: "",
-});
-const handleChange = e => {
+    paymentMethod: ""
+  });
+  const handleChange = (e) => {
     setForm({
-        ...form,
-        [e.target.name]: e.target.value });
-};
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  };
 
-const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Datos del pedido: ", form);
     alert("Compra realizada con éxito");
-};
+  };
 
-return (
+  return (
     <Box component="form" onSubmit={handleSubmit} sx={{ mx: 2, maxWidth: 400 }}>
-        <TextField
-            fullWidth
-            label="Nombre"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            margin="normal"
-            required
-        />
+      <TextField
+        fullWidth
+        label="Nombre"
+        name="name"
+        value={form.name}
+        onChange={handleChange}
+        margin="normal"
+        required
+      />
 
-        <TextField
-            fullWidth
-            label="Dirección"
-            name="address"
-            value={form.address}
-            onChange={handleChange}
-            margin="normal"
-            required
-        />
+      <TextField
+        fullWidth
+        label="Dirección"
+        name="address"
+        value={form.address}
+        onChange={handleChange}
+        margin="normal"
+        required
+      />
 
-        <TextField
-            fullWidth
-            label="Método de Pago"
-            name="paymentMethod"
-            value={form.paymentMethod}
-            onChange={handleChange}
-            margin="normal"
-            required
-        />
-    <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
-    Finalizar Compra
-    </Button>
+      <TextField
+        fullWidth
+        label="Método de Pago"
+        name="paymentMethod"
+        value={form.paymentMethod}
+        onChange={handleChange}
+        margin="normal"
+        required
+      />
+      <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
+        Finalizar Compra
+      </Button>
     </Box>
-);
+  );
 }

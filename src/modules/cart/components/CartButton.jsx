@@ -14,7 +14,7 @@ export function CartButton() {
   return (
     <IconButton color="primary" onClick={() => navigate(AppRoutes.cartPage)}>
       <Badge badgeContent={totalItems} color="error">
-      <ShoppingCart />
+        <ShoppingCart />
       </Badge>
     </IconButton>
   );
