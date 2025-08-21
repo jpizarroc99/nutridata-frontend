@@ -1,6 +1,7 @@
-import { Container } from "@mui/material";
 import { Outlet } from "react-router";
 
+import { BackToTopButton } from "../components/BackToTopButton";
+import { ServerWarmUp } from "../components/ServerWarmUp";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
@@ -12,6 +13,8 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <BackToTopButton />
+      <ServerWarmUp />
     </div>
   );
 }

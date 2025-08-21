@@ -23,9 +23,9 @@ export function DesktopNav() {
         <SearchForm />
       </div>
       <div style={{ display: "flex", gap: "1rem" }}>
-        {isAuthenticated ? <LogoutButton iconButton /> : <RegisterButton iconButton />}
         <CartButton />
         <FavoritesButton />
+        {isAuthenticated ? <LogoutButton iconButton /> : <RegisterButton iconButton />}
       </div>
     </nav>
   );
