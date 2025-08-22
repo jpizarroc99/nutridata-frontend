@@ -1,32 +1,25 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
-import CartInfo from './CartInfo'; 
+import React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
+import CartInfo from "./CartInfo";
 
 export default function CartInfoMobile() {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => (event) => {
-
-    if (
-        event.type === "keydown" &&
-        (event.key === "Tab" || event.key === "Shift")
-    ) {
-        return;
+    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
+      return;
     }
     setOpen(newOpen);
   };
 
   const DrawerList = (
-    <Box sx={{ width: 'auto', px: 3, pb: 3, pt: 8 }} role="presentation">
-      <IconButton
-        onClick={toggleDrawer(false)}
-        sx={{ position: 'absolute', right: 8, top: 8 }}
-      >
+    <Box sx={{ width: "auto", px: 3, pb: 3, pt: 8 }} role="presentation">
+      <IconButton onClick={toggleDrawer(false)} sx={{ position: "absolute", right: 8, top: 8 }}>
         <CloseIcon />
       </IconButton>
 
@@ -37,19 +30,11 @@ export default function CartInfoMobile() {
 
   return (
     <div>
-      <Button
-        variant="text"
-        endIcon={<ExpandMoreRoundedIcon />}
-        onClick={toggleDrawer(true)}
-      >
+      <Button variant="text" endIcon={<ExpandMoreRoundedIcon />} onClick={toggleDrawer(true)}>
         Ver carrito
       </Button>
 
-      <Drawer
-        open={open}
-        anchor="top"
-        onClose={toggleDrawer(false)}
-      >
+      <Drawer open={open} anchor="top" onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
     </div>

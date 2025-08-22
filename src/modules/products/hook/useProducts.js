@@ -1,15 +1,7 @@
 import { useContext, useEffect } from "react";
 
-import { ProductContext } from "../context/ProductContext";
-import { mockProducts } from "../utils/dummyData";
-
-export const useProductContext = () => {
-  const context = useContext(ProductContext);
-  if (!context) {
-    throw new Error("useProductContext debe usarse dentro de un ProductProvider");
-  }
-  return context;
-};
+import { useProductContext } from '../context/ProductContext';
+import { products } from '../../home/utils/DataproductsHomePage';
 
 export const useProducts = () => {
   const { setLoading, setProducts, setError } = useProductContext();
@@ -21,7 +13,7 @@ export const useProducts = () => {
       try {
         // En una implementación real, esto sería una llamada a la API
         setTimeout(() => {
-          setProducts(mockProducts);
+          setProducts(products);
         }, 500); // Simular delay de red
       } catch {
         setError("Error al cargar los productos");

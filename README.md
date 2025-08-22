@@ -6,6 +6,7 @@ Este proyecto implementa un sistema moderno para explorar, gestionar y visualiza
 ---
 
 ## 🚀 Tecnologías utilizadas
+
 - ⚛️ [React 19](https://react.dev/) – Librería para la construcción de interfaces.
 - ⚡ [Vite](https://vitejs.dev/) – Herramienta de build ultrarrápida para frontend.
 - 🎨 [Material UI](https://mui.com/) – Componentes de interfaz accesibles y personalizables.
@@ -44,7 +45,7 @@ Editar
 nutridata-frontend/
 ├── public/               # Archivos estáticos (favicon, imágenes, etc.)
 │   └── vite.svg
-├── src/                  
+├── src/
 │   ├── modules/          # Módulos organizados por dominio
 │   │   ├── auth/         # Login y registro de usuarios
 │   │   ├── cart/         # Carrito de compras + contexto
@@ -135,3 +136,4 @@ Esto asegura un estilo uniforme y buenas prácticas en todo el código base.
 👩‍💻 Autor
 📌 Bootcamp Generation Chile
 
+```

@@ -6,11 +6,11 @@ const Card = styled(MuiCard)(({ theme, selected }) => ({
     background:
       "linear-gradient(to bottom right, hsla(210, 100%, 97%, 0.5) 25%, hsla(210, 100%, 90%, 0.3) 100%)",
     borderColor: "primary.light",
-    boxShadow: "0px 2px 8px hsla(0, 0%, 0%, 0.1)",
+    boxShadow: "0px 2px 8px hsla(0, 0%, 0%, 0.1)"
   },
- ...(selected && {
-        borderColor: (theme.vars || theme).palette.primary.light,
-      }),
+  ...(selected && {
+    borderColor: (theme.vars || theme).palette.primary.light
+  })
 }));
 
 // Contenedor de formulario de pago
@@ -25,7 +25,7 @@ const PaymentContainer = styled("div")(({ theme }) => ({
   border: "1px solid",
   borderColor: (theme.vars || theme).palette.divider,
   background:
-    "linear-gradient(to bottom right, hsla(220, 35%, 97%, 0.3) 25%, hsla(220, 20%, 88%, 0.3) 100%)",
+    "linear-gradient(to bottom right, hsla(220, 35%, 97%, 0.3) 25%, hsla(220, 20%, 88%, 0.3) 100%)"
 }));
 
 export default function CartPaymentForm() {
@@ -66,11 +66,10 @@ export default function CartPaymentForm() {
           Resumen del carrito
         </Typography>
         {cart.map((item) => (
-          <Box
-            key={item.id}
-            sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}
-          >
-            <Typography>{item.name} x{item.quantity}</Typography>
+          <Box key={item.id} sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
+            <Typography>
+              {item.name} x{item.quantity}
+            </Typography>
             <Typography>${item.price * item.quantity}</Typography>
           </Box>
         ))}
@@ -79,7 +78,7 @@ export default function CartPaymentForm() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            mt: 2,
+            mt: 2
           }}
         >
           <Typography variant="h6">Total: ${getTotal()}</Typography>
@@ -99,7 +98,7 @@ export default function CartPaymentForm() {
           sx={{
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
-            gap: 2,
+            gap: 2
           }}
         >
           <Card selected={paymentType === "creditCard"}>
@@ -133,10 +132,14 @@ export default function CartPaymentForm() {
             <Typography variant="subtitle2">Credit card</Typography>
             <CreditCardRoundedIcon sx={{ color: "text.secondary" }} />
           </Box>
-          <SimCardRoundedIcon sx={{ fontSize: 56, transform: "rotate(90deg)", color: "text.secondary" }} />
+          <SimCardRoundedIcon
+            sx={{ fontSize: 56, transform: "rotate(90deg)", color: "text.secondary" }}
+          />
           <Box sx={{ display: "flex", gap: 2 }}>
             <Box sx={{ flexGrow: 1 }}>
-              <FormLabel htmlFor="card-number" required>Card number</FormLabel>
+              <FormLabel htmlFor="card-number" required>
+                Card number
+              </FormLabel>
               <OutlinedInput
                 id="card-number"
                 placeholder="0000 0000 0000 0000"
@@ -146,7 +149,9 @@ export default function CartPaymentForm() {
               />
             </Box>
             <Box sx={{ width: "20%" }}>
-              <FormLabel htmlFor="cvv" required>CVV</FormLabel>
+              <FormLabel htmlFor="cvv" required>
+                CVV
+              </FormLabel>
               <OutlinedInput
                 id="cvv"
                 placeholder="123"
@@ -158,11 +163,15 @@ export default function CartPaymentForm() {
           </Box>
           <Box sx={{ display: "flex", gap: 2 }}>
             <Box sx={{ flexGrow: 1 }}>
-              <FormLabel htmlFor="card-name" required>Name</FormLabel>
+              <FormLabel htmlFor="card-name" required>
+                Name
+              </FormLabel>
               <OutlinedInput id="card-name" placeholder="John Smith" size="small" />
             </Box>
             <Box sx={{ flexGrow: 1 }}>
-              <FormLabel htmlFor="card-expiration" required>Expiration date</FormLabel>
+              <FormLabel htmlFor="card-expiration" required>
+                Expiration date
+              </FormLabel>
               <OutlinedInput
                 id="card-expiration"
                 placeholder="MM/YY"
@@ -184,21 +193,35 @@ export default function CartPaymentForm() {
           <Alert severity="warning" icon={<WarningRoundedIcon />}>
             Your order will be processed once we receive the funds.
           </Alert>
-          <Typography variant="subtitle1" sx={{ fontWeight: "medium" }}>Bank account</Typography>
+          <Typography variant="subtitle1" sx={{ fontWeight: "medium" }}>
+            Bank account
+          </Typography>
           <Typography variant="body1" gutterBottom>
             Please transfer the payment to the bank account details shown below.
           </Typography>
           <Box sx={{ display: "flex", gap: 1 }}>
-            <Typography variant="body1" sx={{ color: "text.secondary" }}>Bank:</Typography>
-            <Typography variant="body1" sx={{ fontWeight: "medium" }}>Mastercredit</Typography>
+            <Typography variant="body1" sx={{ color: "text.secondary" }}>
+              Bank:
+            </Typography>
+            <Typography variant="body1" sx={{ fontWeight: "medium" }}>
+              Mastercredit
+            </Typography>
           </Box>
           <Box sx={{ display: "flex", gap: 1 }}>
-            <Typography variant="body1" sx={{ color: "text.secondary" }}>Account number:</Typography>
-            <Typography variant="body1" sx={{ fontWeight: "medium" }}>123456789</Typography>
+            <Typography variant="body1" sx={{ color: "text.secondary" }}>
+              Account number:
+            </Typography>
+            <Typography variant="body1" sx={{ fontWeight: "medium" }}>
+              123456789
+            </Typography>
           </Box>
           <Box sx={{ display: "flex", gap: 1 }}>
-            <Typography variant="body1" sx={{ color: "text.secondary" }}>Routing number:</Typography>
-            <Typography variant="body1" sx={{ fontWeight: "medium" }}>987654321</Typography>
+            <Typography variant="body1" sx={{ color: "text.secondary" }}>
+              Routing number:
+            </Typography>
+            <Typography variant="body1" sx={{ fontWeight: "medium" }}>
+              987654321
+            </Typography>
           </Box>
         </Box>
       )}
