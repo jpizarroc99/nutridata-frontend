@@ -10,8 +10,8 @@ import {
   Stack
 } from "@mui/material";
 
-import { useProductContext } from "../hook/useProducts";
-import { categories } from "../utils/dummyData";
+import { useProductContext } from '../context/ProductContext';
+import { categories } from '../../home/utils/DataproductsHomePage';
 
 const CatalogFilters = () => {
   const { filters, setFilter } = useProductContext();

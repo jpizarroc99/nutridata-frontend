@@ -1,9 +1,8 @@
-import { Container, Grid } from "@mui/material";
-
-import { CategoryCard } from "../../category/components/CategoryCard";
 import { FeaturedProducts } from "../components/FeaturedProducts";
 import { SpecializedCategories } from "../components/SpecializedCategories";
 import { WelcomeSection } from "../components/WelcomeSection";
+import { QualitiesSection } from "../components/QualitiesSection";
+import { KeepUpdatedSection } from "../components/KeepUpdatedSection";
 
 export function HomePage() {
   return (
@@ -13,6 +12,8 @@ export function HomePage() {
       <div style={{ backgroundColor: "#F9FAFB" }}>
         <FeaturedProducts />
       </div>
+      <QualitiesSection />
+      <KeepUpdatedSection />
     </div>
   );
 }

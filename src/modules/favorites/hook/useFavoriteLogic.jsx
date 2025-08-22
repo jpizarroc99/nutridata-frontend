@@ -17,3 +17,4 @@ const useFavoriteLogic = (product) => {
 };
 
 export default useFavoriteLogic;
+

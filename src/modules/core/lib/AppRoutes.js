@@ -10,5 +10,6 @@ export class AppRoutes {
   static termsAndConditionsPage = "/terminos";
   static privacyPolicyPage = "/politica-privacidad";
   static catalogPage = "/catalog";
+  static productDetailPage= "/product/:id"; 
   static aboutUsPage = "/nosotros";
 }

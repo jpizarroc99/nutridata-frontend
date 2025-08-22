@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Box, List, ListItem,ListItemText,Typography } from "@mui/material";
+import { Button, Box, List, ListItem, ListItemText, Typography } from "@mui/material";
 import { useCart } from "../hooks/useCart";
 
 export default function CartInfo() {
@@ -15,11 +15,7 @@ export default function CartInfo() {
           </Typography>
           <Typography variant="h5">{`$${getTotal().toLocaleString("es-CL")}`}</Typography>
         </Box>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => console.log("Ir a pagar")}
-        >
+        <Button variant="contained" color="primary" onClick={() => console.log("Ir a pagar")}>
           Ir a pagar
         </Button>
       </Box>
@@ -28,12 +24,9 @@ export default function CartInfo() {
       <List disablePadding>
         {cart.map((item) => (
           <ListItem key={item.id} sx={{ py: 1, px: 0 }}>
-            <ListItemText
-              sx={{ mr: 2 }}
-              primary={`${item.title} x ${item.quantity}`}         
-            />
+            <ListItemText sx={{ mr: 2 }} primary={`${item.title} x ${item.quantity}`} />
             <Typography variant="body1" sx={{ fontWeight: "medium" }}>
-              {`$${(item.price * item.quantity).toLocaleString("es-CL")}`} 
+              {`$${(item.price * item.quantity).toLocaleString("es-CL")}`}
             </Typography>
           </ListItem>
         ))}

@@ -12,11 +12,12 @@ import { CategoryPage } from "./modules/category/pages/CategoryPage";
 import { Layout } from "./modules/core/layouts/Layout";
 import { AppRoutes } from "./modules/core/lib/AppRoutes";
 import { ThemeProvider } from "./modules/core/lib/AppTheme";
-import { FavoriteProvider } from "./modules/favorites/components/FavoriteProvider";
+import { FavoritesProvider } from "./modules/favorites/contexts/FavoritesContext";
 import { FavoritesPage } from "./modules/favorites/pages/FavoritesPage";
 import { HomePage } from "./modules/home/pages/HomePage";
-import { ProductProvider } from "./modules/products/components/ProductProvider";
-import CatalogPage from "./modules/products/pages/CatalogPage";
+import { ProductProvider } from './modules/products/context/ProductContext';
+import CatalogPage from './modules/products/pages/CatalogPage';
+import ProductDetailPage from './modules/products/pages/ProductDetailPage';
 import { SearchPage } from "./modules/search/pages/SearchPage";
 
 export default function App() {
@@ -25,7 +26,7 @@ export default function App() {
       <CssBaseline />
       <ThemeProvider>
         <AuthProvider>
-          <FavoriteProvider>
+          <FavoritesProvider>
             <CartProvider>
               <ProductProvider>
                 <Routes>
@@ -43,11 +44,12 @@ export default function App() {
                     <Route path={AppRoutes.categoryPage} element={<CategoryPage />} />
                     <Route path={AppRoutes.catalogPage} element={<CatalogPage />} />
                     <Route path={AppRoutes.aboutUsPage} element={<AboutUsPage />} />
+                    <Route path={AppRoutes.productDetailPage} element={<ProductDetailPage />} />
                   </Route>
                 </Routes>
               </ProductProvider>
             </CartProvider>
-          </FavoriteProvider>
+          </FavoritesProvider>
         </AuthProvider>
       </ThemeProvider>
     </BrowserRouter>

@@ -1,7 +1,11 @@
 import Reacy from "react";
-import {Divider, Grid, Stack, Typography} from "@mui/material";
-import { CreditCardOffRoundedIcon, AccountBalanceRoundedIcon, SimCardRoundedIcon} from "@mui/icons-material";
-import {useContext} from "react";
+import { Divider, Grid, Stack, Typography } from "@mui/material";
+import {
+  CreditCardOffRoundedIcon,
+  AccountBalanceRoundedIcon,
+  SimCardRoundedIcon
+} from "@mui/icons-material";
+import { useContext } from "react";
 
 export default function Review({ paymentType, cardInfo }) {
   const { cart, getTotal } = useContext(CartContext);
@@ -11,13 +15,10 @@ export default function Review({ paymentType, cardInfo }) {
       {/* Lista de productos */}
       <Stack spacing={1}>
         {cart.map((item) => (
-          <Stack
-            key={item.id}
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Typography>{item.name} x{item.quantity}</Typography>
+          <Stack key={item.id} direction="row" justifyContent="space-between" alignItems="center">
+            <Typography>
+              {item.name} x{item.quantity}
+            </Typography>
             <Typography>${item.price * item.quantity}</Typography>
           </Stack>
         ))}
