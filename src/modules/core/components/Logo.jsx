@@ -12,7 +12,7 @@ export function Logo() {
       variant="text"
       onClick={() => navigate(AppRoutes.homePage)}
     >
-      <Avatar src="src/assets/nutridata-logo.png" alt="NutriData logo" />
+      <Avatar src="/nutridata-logo.png" alt="NutriData logo" />
       <h3>NutriData</h3>
     </Button>
   );

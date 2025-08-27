@@ -17,7 +17,7 @@ import { useAuth } from "../../auth/hook/useAuth";
 import { AppRoutes } from "../../core/lib/AppRoutes";
 
 // Imagen de ejemplo (en un proyecto real, importarías una imagen)
-const placeholderImage = "src/assets/imagen principal.jpg";
+const placeholderImage = "/imagen-principal.jpg";
 
 // Componente estilizado para la imagen
 const ResponsiveImage = styled("img")(({ theme }) => ({

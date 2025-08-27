@@ -56,7 +56,7 @@ export function Footer() {
                 }}
               >
                 <Avatar
-                  src="src/assets/nutridata-logo.png"
+                  src="/nutridata-logo.png"
                   alt="NutriData logo"
                   sx={{
                     mr: 1,
